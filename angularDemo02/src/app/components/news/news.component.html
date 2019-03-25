@@ -1,0 +1,56 @@
+<!-- 绑定数据 -->
+<h2>{{title}}</h2>
+<h3>{{msg}}</h3>
+<h4>{{username}}</h4>
+<h5>{{student}}</h5>
+
+<hr />
+<!-- 绑定对象数据 -->
+<h5>{{userinfo.username}}</h5>
+<h5>{{userinfo.age}}</h5>
+<h5>{{message}}</h5>
+
+<hr />
+<!-- 动态绑定标签属性 -->
+<div [title]="student">
+    张三
+</div>
+<!-- 通过属性绑定的方法解析标签 绑定数据 -->
+<span [innerHtml]="content" class="red"></span>
+
+<!-- 允许做简单运算 -->
+1+2={{1+2}}
+
+<!-- 循环遍历数组绑定到页面中 -->
+<ul class="ul">
+    <li *ngFor="let item of arr">
+        {{item}}
+    </li>
+</ul>
+
+<ol>
+    <li *ngFor="let item of list">
+        {{item}}
+    </li>
+</ol>
+
+<!-- 遍历对象数组绑定页面 -->
+<ul>
+    <li *ngFor="let item of userList">
+        {{item.username}}
+        {{item.age}}
+    </li>
+</ul>
+
+<!-- 遍历复杂数组绑定页面 -->
+<ul>
+    <li *ngFor="let item of cars">
+        <h2>{{item.cate}}</h2>
+        <ol *ngFor="let car of item.list">
+            <li>
+                {{car.title}}
+                {{car.price}}
+            </li>
+        </ol>
+    </li>
+</ul>
